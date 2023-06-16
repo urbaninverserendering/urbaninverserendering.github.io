@@ -24,7 +24,10 @@
   <link rel="stylesheet" href="./src/index.css">
   <link rel="stylesheet" href="./src/select.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
+  <link rel="stylesheet" href="resources/glide.core.min.css">
+  <link rel="stylesheet" href="resources/glide.theme.min.css">
+  <link rel="stylesheet" href="resources/glide-custom.css">
+  <script src="resources/handlers.js"></script>
   <script src="./src/jquery.min.js"></script>
   <script src="./src/bootstrap.min.js"></script>
   <script src="./src/codemirror.min.js"></script>
@@ -36,7 +39,40 @@
   <!-- <script src="./src/app.js"></script> -->
   <script src="./src/index.js"></script>
   <!-- <script src="./src/slick.js"></script> -->
-
+  
+  <script src="resources/glide.min.js"></script>
+  <script>
+  window.onload = function() {
+    new Glide("#dynamic-carousel", {
+      type: "carousel",
+      perView: 1.68,
+      focusAt: "center",
+      autoplay: 3000,
+      hoverpause: true
+    }).mount();
+    new Glide("#static-carousel", {
+      type: "carousel",
+      perView: 1.68,
+      focusAt: "center",
+      autoplay: 3000,
+      hoverpause: true
+    }).mount();
+    new Glide("#realtime-carousel", {
+      type: "carousel",
+      perView: 2.05,
+      focusAt: "center",
+      autoplay: 3000,
+      hoverpause: true
+    }).mount();
+  };
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ6PES7EKD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RZ6PES7EKD');
+  </script>
 </head>
 
 <body>
@@ -90,6 +126,50 @@
       </div>
     </div>
 
+    <div class="glide" id="dynamic-carousel">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <video controls muted loop autoplay>
+              <source src="src/merge/1538.mp4" type="video/mp4"/>
+            </video>
+          </li>
+          <li class="glide__slide">
+            <video controls muted loop autoplay>
+              <source src="src/merge/687.mp4" type="video/mp4"/>
+            </video>
+          </li>
+          <li class="glide__slide">
+            <video controls muted loop autoplay>
+              <source src="src/merge/4474.mp4" type="video/mp4"/>
+            </video>
+          </li>
+          <li class="glide__slide">
+            <video controls muted loop autoplay>
+              <source src="src/merge/6040.mp4" type="video/mp4"/>
+            </video>
+          </li>
+          <li class="glide__slide">
+            <video controls muted loop autoplay>
+              <source src="src/merge/7638.mp4" type="video/mp4"/>
+            </video>
+          </li>
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <span class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="resources/arrow-left-circle-fill.svg"/></span>
+        <span class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="resources/arrow-right-circle-fill.svg"/></span>
+      </div>
+      <div class="glide__bullets" data-glide-el="controls[nav]">
+        <span class="glide__bullet" data-glide-dir="=0"></span>
+        <span class="glide__bullet" data-glide-dir="=1"></span>
+        <span class="glide__bullet" data-glide-dir="=2"></span>
+        <span class="glide__bullet" data-glide-dir="=3"></span>
+        <span class="glide__bullet" data-glide-dir="=4"></span>
+      </div>
+    </div>
+    <p class="center shift-to-above"></p>
+    <p class="center shift-to-above"></p>
 
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 text-center">
