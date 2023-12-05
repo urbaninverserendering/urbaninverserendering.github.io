@@ -146,7 +146,12 @@
           </li>
           <li class="glide__slide">
             <video controls muted loop autoplay>
-              <source src="src/merge/687.mp4" type="video/mp4"/>
+              <source src="src/merge/1720.mp4" type="video/mp4"/>
+            </video>
+          </li>
+          <li class="glide__slide">
+            <video controls muted loop autoplay>
+              <source src="src/merge/3970.mp4" type="video/mp4"/>
             </video>
           </li>
           <li class="glide__slide">
@@ -162,6 +167,11 @@
           <li class="glide__slide">
             <video controls muted loop autoplay>
               <source src="src/merge/7638.mp4" type="video/mp4"/>
+            </video>
+          </li>
+          <li class="glide__slide">
+            <video controls muted loop autoplay>
+              <source src="src/merge/0687.mp4" type="video/mp4"/>
             </video>
           </li>
         </ul>
@@ -182,7 +192,7 @@
 
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 text-center">
-        Reconstruction, Normal, Albedo, Shading, Visibility, Semantics
+        Reconstruction, Albedo, Normal, Visibility, Shading, Semantics
         <!-- <img src="./src/images/teaser.png" class="img-responsive" alt="overview" width="100%"
             style="max-height: 450px;margin:auto;"> -->
       </div>
@@ -195,18 +205,16 @@
             Abstract 
         </h3>
         <div class="text-justify">
-            We show how to build a model that allows realistic, free-viewpoint renderings of a scene under novel
-            lighting conditions from video. Our method -- <b>UrbanIR</b>: Urban Scene Inverse Rendering --
-            computes an inverse graphics representation from the video. 
-            UrbanIR jointly infers shape, albedo, visibility, and sun and sky
-            illumination from <b>a single video of unbounded outdoor scenes</b> with unknown lighting.
-            UrbanIR uses videos from cameras mounted on cars (in contrast to many views of the same points in typical NeRF-style estimation).
-            As a result, standard methods produce poor geometry estimates (for example, roofs), and there are numerous ''floaters''.  
-            Errors in inverse graphics inference can result in strong rendering artifacts.
-            UrbanIR uses novel losses to control these and other sources of error. UrbanIR uses a novel loss to make very good
-            estimates of shadow volumes in the original scene.  The resulting representations facilitate controllable
-            editing, delivering photorealistic free-viewpoint renderings of relit scenes and inserted objects.  Qualitative
-            evaluation demonstrates strong improvements over the state-of-the-art.
+          We present <b>UrbanIR</b> (Urban Scene Inverse Rendering), 
+          a new inverse graphics model that enables realistic, free-viewpoint renderings of scenes 
+          under various lighting conditions with a single video. It accurately infers shape, albedo, visibility, and sun and sky illumination 
+          from wide-baseline videos, such as those from car-mounted cameras, 
+          differing from NeRF's dense view settings. In this context, standard methods often yield subpar geometry and material estimates, 
+          such as inaccurate roof representations and numerous 'floaters'. 
+          UrbanIR addresses these issues with novel losses that reduce errors in inverse graphics inference and rendering artifacts. 
+          Its techniques allow for precise shadow volume estimation in the original scene. 
+          The model's outputs support controllable editing, enabling photorealistic free-viewpoint renderings of night simulations, relit scenes, and inserted objects, 
+          marking a significant improvement over existing state-of-the-art methods.
         </div>
         <!-- <center>
           <img src="./src/images/rendering.png" class="img-responsive" alt="rendering" width="80%"
@@ -228,7 +236,7 @@
         <center>
           <div class="video-compare-container" id="ours" style="width: 100%">
             <video class="video" id="simulation_video" loop="" playsinline="" autoplay="" muted=""
-              poster="src/loading.gif" src="src/decomposition/6040/rgb_albedo.mp4"
+              poster="src/loading.gif" src="src/decomposition/1538/rgb_albedo.mp4"
               onplay="resizeAndPlay(this)">
             </video>
             <canvas class="videoMerge" id="simulation_videoMerge"></canvas>
@@ -248,9 +256,47 @@
           <h4>
             Scene
           </h4>
-          <ul class="nav nav-pills nav-justified" id="scene-view-ul" style="width: 40%">
+          <ul class="nav nav-pills nav-justified" id="scene-view-ul" style="width: 100%">
             <li role="presentation" class="active"><a href="javascript: void(0);"onclick="ChangeScene(0);">Scene 0</a></li>
             <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(1);">Scene 1</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(2);">Scene 2</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(3);">Scene 3</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(4);">Scene 4</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(5);">Scene 5</a></li>
+          </ul>
+        </center>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h3>
+          Nighttime Simulation
+        </h3>
+        <p>
+            * By editing original illumination and inserting new light sources (e.g. streetlights), UrbanIR simulates nighttime videos. 
+            <br />
+            * Left: Reconstruction, Right: Nighttime simulation.
+            <br />
+        </p>
+
+        <center>
+          <div class="video-compare-container" id="day_night" style="width: 100%">
+            <video class="video" id="day_night_video" loop="" playsinline="" autoplay="" muted=""
+              poster="src/loading.gif" src="src/relight_night/1538/day_night.mp4"
+              onplay="resizeAndPlay(this)">
+            </video>
+            <canvas class="videoMerge" id="day_night_videoMerge"></canvas>
+          </div>
+          <h4>
+            Scene
+          </h4>
+          <ul class="nav nav-pills nav-justified" id="night-view-ul" style="width: 100%">
+            <li role="presentation" class="active"><a href="javascript: void(0);"onclick="ChangeScene(0);">Scene 0</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(1);">Scene 1</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(2);">Scene 2</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(3);">Scene 3</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(4);">Scene 4</a></li>
           </ul>
         </center>
       </div>
@@ -264,16 +310,17 @@
           <p>
             * By changing sunlight direction explicitly, UrbanIR simulates <b>sharp</b> and <b>geometry-aware</b>  shadow.
             <br />
+            * Left: input image, Right: Timelapse Simulation
           </p>
   
           <center>
-            <video id="v1" width="100%" playsinline="" autoplay="" loop="" muted="" poster="src/loading.gif">
-                <source src="src/relight_sun/4474/rgb.mp4" type="video/mp4">
-            </video>
-            <br />
-            <video id="v1" width="100%" playsinline="" autoplay="" loop="" muted="" poster="src/loading.gif">
-                <source src="src/relight_sun/1538/rgb.mp4" type="video/mp4">
-            </video>
+            <div class="video-compare-container" id="timelapse" style="width: 100%">
+                <video class="video" id="timelapse_video" loop="" playsinline="" autoplay="" muted=""
+                  poster="src/loading.gif" src="src/relight_sun/4474/timelapse.mp4"
+                  onplay="resizeAndPlay(this)">
+                </video>
+                <canvas class="videoMerge" id="timelapse_videoMerge"></canvas>
+            </div>
           </center>
         </div>
     </div>
@@ -302,38 +349,6 @@
           </div>
         </center>
       </div>
-  </div>
-
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h3>
-            Relighting: Night Simulation
-          </h3>
-          <p>
-            * With intrinsic scene components, UrbanIR adds new light sources (e.g. headlight, streetlight) and simulates the night scene.
-            <br />
-            * Left: day (original), Right: night (simulation)
-            <br />
-          </p>
-  
-          <center>
-            <div class="video-compare-container" id="night_0" style="width: 100%">
-                <video class="video" id="night_0_video" loop="" playsinline="" autoplay="" muted=""
-                  poster="src/loading.gif" src="src/relight_night/1538/day_night.mp4"
-                  onplay="resizeAndPlay(this)">
-                </video>
-                <canvas class="videoMerge" id="night_0_videoMerge"></canvas>
-            </div>
-
-            <div class="video-compare-container" id="night_1" style="width: 100%">
-                <video class="video" id="night_1_video" loop="" playsinline="" autoplay="" muted=""
-                  poster="src/loading.gif" src="src/relight_night/6040/day_night.mp4"
-                  onplay="resizeAndPlay(this)">
-                </video>
-                <canvas class="videoMerge" id="night_1_videoMerge"></canvas>
-            </div>
-          </center>
-        </div>
     </div>
 
     <div class="row">

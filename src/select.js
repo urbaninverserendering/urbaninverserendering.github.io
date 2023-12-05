@@ -4,9 +4,12 @@ var currentSimId = 0;
 var currentIntList = ["albedo", "depth", "normal", "visibility", "shading", "semantic"];
 var currentInt = "albedo";
 var currentIntId = 0;
-var currentSceneList = ["6040", "1538"];
-var currentScene = "6040";
+var currentSceneList = ["1538", "1720", "3970", "4474", "6040", "7638"];
+var currentScene = "1538";
 var currentSceneId = 0;
+var currentNightList = ["1538", "1720", "3970", "6040", "0687"];
+var currentNight = "1538";
+var currentNightId = 0;
 var currentMethodList = ["ours", "GAN", "Diffusion", "Swap", "Sty"];
 var currentMethod = "ours";
 
@@ -133,11 +136,36 @@ function ChangeScene(idx){
     let container = video.parentNode
     video.src = "src/decomposition/"+ currentScene + '/rgb_' + currentInt + '.mp4';
 
-    container.style = "width: 100%; opacity: 0;"
-    setTimeout(()=>{
-        container.style = "width: 100%; opacity: 1;"
-        video.load();
-    }, 1000)
+    // container.style = "width: 100%; opacity: 0;"
+    // setTimeout(()=>{
+    //     container.style = "width: 100%; opacity: 1;"
+    //     video.load();
+    // }, 1000)
+
+}
+
+function ChangeNight(idx){
+    var li_list = document.getElementById("night-view-ul").children;
+    console.log(idx);
+    console.log(li_list);
+
+    for(i = 0; i < li_list.length; i++){
+        li_list[i].className = "";
+    }
+    li_list[idx].className = "active";
+    
+    currentNight = currentNightList[idx];
+    currentNightId = idx;
+
+    let video = document.getElementById("day_night_video")
+    let container = video.parentNode
+    video.src = "src/relight_night/"+ currentNight + '/day_night.mp4';
+
+    // container.style = "width: 100%; opacity: 0;"
+    // setTimeout(()=>{
+    //     container.style = "width: 100%; opacity: 1;"
+    //     video.load();
+    // }, 1000)
 
 }
 
