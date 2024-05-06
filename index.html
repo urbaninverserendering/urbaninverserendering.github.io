@@ -236,7 +236,7 @@
         <center>
           <div class="video-compare-container" id="ours" style="width: 100%">
             <video class="video" id="simulation_video" loop="" playsinline="" autoplay="" muted=""
-              poster="src/loading.gif" src="src/decomposition/1538/rgb_albedo.mp4"
+              poster="src/loading.gif" src="src/decomposition/w_seq3/rgb_albedo.mp4"
               onplay="resizeAndPlay(this)">
             </video>
             <canvas class="videoMerge" id="simulation_videoMerge"></canvas>
@@ -248,21 +248,27 @@
             <li role="presentation" class="active"><a href="javascript: void(0);" onclick="ChangeInt(0);">Albedo</a></li>
             <li role="presentation"><a href="javascript: void(0);" onclick="ChangeInt(1);">Depth</a></li>
             <li role="presentation"><a href="javascript: void(0);" onclick="ChangeInt(2);">Normal</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeInt(3);">Visibility</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeInt(4);">Shading</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeInt(5);">Semantic</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeInt(3);">Shading</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeInt(4);">Semantic</a></li>
 
           </ul>
           <h4>
             Scene
           </h4>
           <ul class="nav nav-pills nav-justified" id="scene-view-ul" style="width: 100%">
-            <li role="presentation" class="active"><a href="javascript: void(0);"onclick="ChangeScene(0);">Scene 0</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(1);">Scene 1</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(2);">Scene 2</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(3);">Scene 3</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(4);">Scene 4</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(5);">Scene 5</a></li>
+            <li role="presentation" class="active"><a href="javascript: void(0);"onclick="ChangeScene(0);">Waymo-0</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(1);">Waymo-1</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(2);">Waymo-2</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(3);">Waymo-3</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(4);">Waymo-4</a></li>
+            <br/>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(5);">Kitti-0</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(6);">Kitti-1</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(7);">Kitti-2</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(8);">Kitti-3</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(9);">Kitti-4</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(10);">Kitti-5</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeScene(11);">Kitti-6</a></li>
           </ul>
         </center>
       </div>
@@ -283,7 +289,7 @@
         <center>
           <div class="video-compare-container" id="day_night" style="width: 100%">
             <video class="video" id="day_night_video" loop="" playsinline="" autoplay="" muted=""
-              poster="src/loading.gif" src="src/relight_night/1538/day_night.mp4"
+              poster="src/loading.gif" src="src/relight_night/w_seq3/day_night.mp4"
               onplay="resizeAndPlay(this)">
             </video>
             <canvas class="videoMerge" id="day_night_videoMerge"></canvas>
@@ -292,11 +298,17 @@
             Scene
           </h4>
           <ul class="nav nav-pills nav-justified" id="night-view-ul" style="width: 100%">
-            <li role="presentation" class="active"><a href="javascript: void(0);"onclick="ChangeNight(0);">Scene 0</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(1);">Scene 1</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(2);">Scene 2</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(3);">Scene 3</a></li>
-            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(4);">Scene 4</a></li>
+            <li role="presentation" class="active"><a href="javascript: void(0);"onclick="ChangeNight(0);">Waymo-0</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(1);">Waymo-1</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(2);">Waymo-2</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(3);">Waymo-3</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(4);">Waymo-4</a></li>
+            <br/>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(5);">Kitti-0</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(6);">Kitti-1</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(7);">Kitti-2</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(8);">Kitti-3</a></li>
+            <li role="presentation"><a href="javascript: void(0);" onclick="ChangeNight(9);">Kitti-4</a></li>
           </ul>
         </center>
       </div>
@@ -316,7 +328,7 @@
           <center>
             <div class="video-compare-container" id="timelapse" style="width: 100%">
                 <video class="video" id="timelapse_video" loop="" playsinline="" autoplay="" muted=""
-                  poster="src/loading.gif" src="src/relight_sun/4474/timelapse.mp4"
+                  poster="src/loading.gif" src="src/relight_sun/k_4474/timelapse.mp4"
                   onplay="resizeAndPlay(this)">
                 </video>
                 <canvas class="videoMerge" id="timelapse_videoMerge"></canvas>
@@ -325,7 +337,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <h3>
           Object Insertion
@@ -349,7 +361,7 @@
           </div>
         </center>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -360,7 +372,9 @@
         The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>, <A
         href="https://climatenerf.github.io/">ClimateNeRF</a>, <A
           href="https://dorverbin.github.io/refnerf/index.html">RefNeRF</a> , <A
-          href="https://nerfies.github.io/">Nerfies</A> and <A
+          href="https://nerfies.github.io/">Nerfies</A>, 
+          <A href="https://climatenerf.github.io/">ClimateNeRF</A>,
+          and <A
           href="https://hhsinping.github.io/svs/supp/visual_comparison.html">Semantic View Synthesis</a>.
 
       </div>

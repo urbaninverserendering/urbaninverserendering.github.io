@@ -1,13 +1,19 @@
 var currentSimList = ["flood", "snow", "smog"];
 var currentSim = "flood";
 var currentSimId = 0;
-var currentIntList = ["albedo", "depth", "normal", "visibility", "shading", "semantic"];
+var currentIntList = ["albedo", "depth", "normal", "shading", "semantic"];
 var currentInt = "albedo";
 var currentIntId = 0;
-var currentSceneList = ["1538", "1720", "3970", "4474", "6040", "7638"];
-var currentScene = "1538";
+var currentSceneList = [
+    "w_seq3", "w_seq4", "w_seq5", "w_seq2", "w_seq0", 
+    "k_6040", "k_1538", "k_0687", "k_1720", "k_3970", "k_4474", "k_7638"
+];
+var currentScene = "w_seq3";
 var currentSceneId = 0;
-var currentNightList = ["1538", "1720", "3970", "6040", "0687"];
+var currentNightList = [
+    "w_seq3", "w_seq4", "w_seq5", "w_seq2", "w_seq0", 
+    "k_6040", "k_1538", "k_0687", "k_1720", "k_3970"
+];
 var currentNight = "1538";
 var currentNightId = 0;
 var currentMethodList = ["ours", "GAN", "Diffusion", "Swap", "Sty"];
@@ -105,7 +111,14 @@ function ChangeSim(idx){
 }
 
 function ChangeInt(idx){
-    var li_list = document.getElementById("sim-view-ul").children;
+    // var li_list = document.getElementById("sim-view-ul").children;
+    var children = document.getElementById("sim-view-ul").children;
+    var li_list = [];
+    for (i=0;i<children.length;i++){
+        if(children[i].tagName == "LI"){
+            li_list.push(children[i]);
+        }
+    }
     console.log(idx);
     console.log(li_list);
     for(i = 0; i < li_list.length; i++){
@@ -120,7 +133,14 @@ function ChangeInt(idx){
 }
 
 function ChangeScene(idx){
-    var li_list = document.getElementById("scene-view-ul").children;
+    // var li_list = document.getElementById("scene-view-ul").children;
+    var children = document.getElementById("scene-view-ul").children;
+    var li_list = [];
+    for (i=0;i<children.length;i++){
+        if(children[i].tagName == "LI"){
+            li_list.push(children[i]);
+        }
+    }
     console.log(idx);
     console.log(li_list);
 
@@ -145,7 +165,14 @@ function ChangeScene(idx){
 }
 
 function ChangeNight(idx){
-    var li_list = document.getElementById("night-view-ul").children;
+    //var li_list = document.getElementById("night-view-ul").children;
+    var children = document.getElementById("night-view-ul").children;
+    var li_list = [];
+    for (i=0;i<children.length;i++){
+        if(children[i].tagName == "LI"){
+            li_list.push(children[i]);
+        }
+    }
     console.log(idx);
     console.log(li_list);
 
